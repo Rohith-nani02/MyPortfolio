@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rohith | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f8fc;
+    color: #111827;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 65px;
+    background: #07111f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.logo {
+    color: #1685ff;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #1685ff;
+}
+
+section {
+    min-height: calc(100vh - 65px);
+    padding: 70px 7%;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin-bottom: 12px;
+}
+
+.hero h1 span {
+    color: #147cf5;
+}
+
+.hero h3 {
+    font-size: 17px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.cards {
+    width: 100%;
+    max-width: 950px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 28px 15px;
+    min-height: 165px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.13);
+}
+
+.card .icon {
+    font-size: 32px;
+    color: #147cf5;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 11px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.page-title h1 {
+    font-size: 30px;
+}
+
+.page-title p {
+    color: #666;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.line {
+    width: 45px;
+    height: 3px;
+    background: #147cf5;
+    margin: 10px auto;
+}
+
+.about-container {
+    max-width: 850px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.about-box,
+.info-box {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+}
+
+.about-box h2,
+.info-box h2 {
+    color: #147cf5;
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+.about-box p {
+    font-size: 12px;
+    line-height: 1.9;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 11px;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item span:first-child {
+    font-weight: bold;
+}
+
+.info-item span:last-child {
+    color: #147cf5;
+}
+
+.skills-container {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.skill {
+    background: white;
+    padding: 25px 15px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.skill:hover {
+    transform: translateY(-6px);
+}
+
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    background: #147cf5;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.skill h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.skill p {
+    font-size: 10px;
+    color: #666;
+}
+
+.learning {
+    max-width: 900px;
+    margin: 40px auto 0;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.learning h2 {
+    color: #147cf5;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.learning p {
+    color: #666;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.education-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.education-card {
+    background: white;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.education-icon {
+    font-size: 38px;
+    color: #147cf5;
+    margin-bottom: 15px;
+}
+
+.education-card h2 {
+    color: #147cf5;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.education-card h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.education-card p {
+    font-size: 11px;
+    color: #666;
+    margin: 7px;
+}
+
+.certificate {
+    border-left: 4px solid #147cf5;
+    text-align: left;
+}
+
+.certificate h2 {
+    margin-bottom: 10px;
+}
+
+.projects-empty {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 50px 30px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+}
+
+.projects-empty .big-icon {
+    font-size: 50px;
+    color: #147cf5;
+    margin-bottom: 20px;
+}
+
+.projects-empty h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.projects-empty p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #666;
+}
+
+.contact-container {
+    max-width: 850px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.contact-box,
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    background: #147cf5;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-item h4 {
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.contact-item p {
+    font-size: 10px;
+    color: #666;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    font-size: 11px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #147cf5;
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+button {
+    display: block;
+    margin: 35px auto 0;
+    padding: 11px 22px;
+    border: none;
+    background: #147cf5;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 11px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0867d8;
+    transform: translateY(-2px);
+}
+
+#message {
+    text-align: center;
+    color: green;
+    font-size: 11px;
+    margin-top: 15px;
+}
+
+footer {
+    height: 50px;
+    background: #07111f;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+}
+
+@media(max-width: 800px) {
+
+    header {
+        height: auto;
+        padding: 18px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    section {
+        padding: 50px 5%;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .cards,
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">Rohith</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<section id="home">
+
+    <div class="hero">
+
+        <h1>Hello, I'm <span>Rohith</span></h1>
+
+        <h3>Computer Science Engineering Student</h3>
+
+        <p>
+            Welcome to my personal portfolio.<br>
+            Explore my skills, education and journey in technology.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card" onclick="goTo('about')">
+            <div class="icon">♟</div>
+            <h2>About Me</h2>
+            <p>Know more about me, my interests and my goals.</p>
+        </div>
+
+        <div class="card" onclick="goTo('skills')">
+            <div class="icon">&lt;/&gt;</div>
+            <h2>My Skills</h2>
+            <p>Explore the technologies and programming languages I know.</p>
+        </div>
+
+        <div class="card" onclick="goTo('projects')">
+            <div class="icon">◆</div>
+            <h2>Projects</h2>
+            <p>See my current learning journey and upcoming projects.</p>
+        </div>
+
+        <div class="card" onclick="goTo('education')">
+            <div class="icon">🎓</div>
+            <h2>Education</h2>
+            <p>Know about my academic background and certification.</p>
+        </div>
+
+        <div class="card" onclick="goTo('contact')">
+            <div class="icon">✉</div>
+            <h2>Contact Me</h2>
+            <p>Get in touch with me.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="about">
+
+    <div class="page-title">
+
+        <h1>About Me</h1>
+
+        <div class="line"></div>
+
+        <p>A little information about me</p>
+
+    </div>
+
+    <div class="about-container">
+
+        <div class="about-box">
+
+            <h2>Who Am I?</h2>
+
+            <p>
+                Hello! I'm Rohith, a Computer Science Engineering
+                student currently pursuing my 3rd year at NBKRIST.
+            </p>
+
+            <p>
+                I am interested in programming and web development.
+                I enjoy learning new technologies and improving my
+                problem-solving abilities.
+            </p>
+
+            <p>
+                I am currently building my technical foundation and
+                looking forward to creating meaningful projects.
+            </p>
+
+        </div>
+
+        <div class="info-box">
+
+            <h2>Quick Information</h2>
+
+            <div class="info-item">
+                <span>Name</span>
+                <span>Rohith</span>
+            </div>
+
+            <div class="info-item">
+                <span>Branch</span>
+                <span>CSE</span>
+            </div>
+
+            <div class="info-item">
+                <span>Year</span>
+                <span>3rd Year</span>
+            </div>
+
+            <div class="info-item">
+                <span>College</span>
+                <span>NBKRIST</span>
+            </div>
+
+            <div class="info-item">
+                <span>Interest</span>
+                <span>Technology</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <button onclick="goTo('home')">← Back to Home</button>
+
+</section>
+
+
+<section id="skills">
+
+    <div class="page-title">
+
+        <h1>My Skills</h1>
+
+        <div class="line"></div>
+
+        <p>Technologies I am learning and working with</p>
+
+    </div>
+
+    <div class="skills-container">
+
+        <div class="skill">
+            <div class="skill-icon">J</div>
+            <h3>Java</h3>
+            <p>Object-oriented programming</p>
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">Py</div>
+            <h3>Python</h3>
+            <p>Programming and problem solving</p>
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">5</div>
+            <h3>HTML</h3>
+            <p>Web page structure</p>
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">#</div>
+            <h3>CSS</h3>
+            <p>Website styling and design</p>
+        </div>
+
+    </div>
+
+    <div class="learning">
+
+        <h2>Currently Learning</h2>
+
+        <p>
+            I am continuously improving my programming knowledge,
+            exploring web development and working towards becoming
+            a better software developer.
+        </p>
+
+    </div>
+
+    <button onclick="goTo('home')">← Back to Home</button>
+
+</section>
+
+
+<section id="projects">
+
+    <div class="page-title">
+
+        <h1>My Projects</h1>
+
+        <div class="line"></div>
+
+        <p>My development journey</p>
+
+    </div>
+
+    <div class="projects-empty">
+
+        <div class="big-icon">◆</div>
+
+        <h2>Projects Coming Soon</h2>
+
+        <p>
+            I haven't completed any major projects yet.
+            I am currently focusing on strengthening my
+            programming and web development skills.
+        </p>
+
+        <p>
+            This section will be updated as I build and
+            complete new projects.
+        </p>
+
+    </div>
+
+    <button onclick="goTo('home')">← Back to Home</button>
+
+</section>
+
+
+<section id="education">
+
+    <div class="page-title">
+
+        <h1>Education</h1>
+
+        <div class="line"></div>
+
+        <p>My academic journey</p>
+
+    </div>
+
+    <div class="education-container">
+
+        <div class="education-card">
+
+            <div class="education-icon">🎓</div>
+
+            <h2>Bachelor of Technology</h2>
+
+            <h3>Computer Science and Engineering</h3>
+
+            <p>NBKR Institute of Science and Technology</p>
+
+            <p>Currently pursuing 3rd Year</p>
+
+        </div>
+
+        <div class="education-card certificate">
+
+            <div class="education-icon">📜</div>
+
+            <h2>NPTEL Certificate</h2>
+
+            <p>
+                Successfully completed an NPTEL course
+                as part of my technical learning journey.
+            </p>
+
+        </div>
+
+    </div>
+
+    <button onclick="goTo('home')">← Back to Home</button>
+
+</section>
+
+
+<section id="contact">
+
+    <div class="page-title">
+
+        <h1>Contact Me</h1>
+
+        <div class="line"></div>
+
+        <p>Let's connect</p>
+
+    </div>
+
+    <div class="contact-container">
+
+        <div class="contact-box">
+
+            <div class="contact-item">
+
+                <div class="contact-icon">♟</div>
+
+                <div>
+                    <h4>Name</h4>
+                    <p>Rohith</p>
+                </div>
+
+            </div>
+
+            <div class="contact-item">
+
+                <div class="contact-icon">🎓</div>
+
+                <div>
+                    <h4>College</h4>
+                    <p>NBKRIST</p>
+                </div>
+
+            </div>
+
+            <div class="contact-item">
+
+                <div class="contact-icon">💻</div>
+
+                <div>
+                    <h4>Branch</h4>
+                    <p>Computer Science Engineering</p>
+                </div>
+
+            </div>
+
+            <div class="contact-item">
+
+                <div class="contact-icon">📍</div>
+
+                <div>
+                    <h4>Status</h4>
+                    <p>3rd Year Student</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <form class="contact-form" id="contactForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <textarea
+                placeholder="Your Message"
+                required
+            ></textarea>
+
+            <button type="submit">Send Message</button>
+
+        </form>
+
+    </div>
+
+    <p id="message"></p>
+
+    <button onclick="goTo('home')">← Back to Home</button>
+
+</section>
+
+
+<footer>
+
+    © 2026 Rohith | My Personal Portfolio
+
+</footer>
+
+
+<script>
+
+function goTo(id) {
+    document.getElementById(id).scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+
+    document.getElementById("message").textContent =
+        "Thank you, " + name + "! Your message has been received.";
+
+    this.reset();
+
+});
+
+</script>
+
+</body>
+</html>
