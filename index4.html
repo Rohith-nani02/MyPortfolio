@@ -1,263 +1,359 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rohith | My Portfolio</title>
+    <title>Rohith | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
+<header>
+    <div class="logo">Rohith</div>
 
-        <h1>Rohith</h1>
-
-        <nav>
-            <a onclick="showPage('home')">Home</a>
-            <a onclick="showPage('about')">About</a>
-            <a onclick="showPage('skills')">Skills</a>
-            <a onclick="showPage('projects')">Projects</a>
-            <a onclick="showPage('education')">Education</a>
-            <a onclick="showPage('contact')">Contact</a>
-        </nav>
-
-    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
 
-    <!-- HOME -->
+<section id="home">
 
-    <section id="home" class="page active">
+    <div class="hero">
 
-        <div class="hero">
+        <h1>Hello, I'm <span>Rohith</span></h1>
 
-            <h2>Hello, I'm <span>Rohith</span></h2>
+        <h3>Computer Science Engineering Student</h3>
 
-            <p>Computer Science Engineering Student</p>
+        <p>
+            Welcome to my personal portfolio.<br>
+            Explore my skills, education and journey in technology.
+        </p>
 
-            <p class="intro">
-                Welcome to my personal portfolio website.
-                Explore the sections below to know more about me.
-            </p>
+    </div>
 
+    <div class="cards">
+
+        <div class="card" onclick="goTo('about')">
+            <div class="icon">♟</div>
+            <h2>About Me</h2>
+            <p>Know more about me, my interests and my goals.</p>
         </div>
 
-        <div class="cards">
-
-            <div class="card" onclick="showPage('about')">
-                <h3>About Me</h3>
-                <p>Know more about me and my interests.</p>
-            </div>
-
-            <div class="card" onclick="showPage('skills')">
-                <h3>My Skills</h3>
-                <p>Explore my technical skills.</p>
-            </div>
-
-            <div class="card" onclick="showPage('projects')">
-                <h3>My Projects</h3>
-                <p>View my projects and work.</p>
-            </div>
-
-            <div class="card" onclick="showPage('education')">
-                <h3>Education</h3>
-                <p>Know about my academic background.</p>
-            </div>
-
-            <div class="card" onclick="showPage('contact')">
-                <h3>Contact Me</h3>
-                <p>Get in touch with me.</p>
-            </div>
-
+        <div class="card" onclick="goTo('skills')">
+            <div class="icon">&lt;/&gt;</div>
+            <h2>My Skills</h2>
+            <p>Explore the technologies and programming languages I know.</p>
         </div>
 
-    </section>
+        <div class="card" onclick="goTo('projects')">
+            <div class="icon">◆</div>
+            <h2>Projects</h2>
+            <p>See my current learning journey and upcoming projects.</p>
+        </div>
+
+        <div class="card" onclick="goTo('education')">
+            <div class="icon">🎓</div>
+            <h2>Education</h2>
+            <p>Know about my academic background and certification.</p>
+        </div>
+
+        <div class="card" onclick="goTo('contact')">
+            <div class="icon">✉</div>
+            <h2>Contact Me</h2>
+            <p>Get in touch with me.</p>
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- ABOUT -->
+<section id="about">
 
-    <section id="about" class="page">
+    <div class="page-title">
 
-        <h2>About Me</h2>
+        <h1>About Me</h1>
 
-        <div class="content-box">
+        <div class="line"></div>
+
+        <p>A little information about me</p>
+
+    </div>
+
+    <div class="about-container">
+
+        <div class="about-box">
+
+            <h2>Who Am I?</h2>
 
             <p>
-                Hello! My name is Rohith. I am a Computer Science
-                Engineering student interested in technology,
-                programming and software development.
+                Hello! I'm Rohith, a Computer Science Engineering
+                student currently pursuing my 3rd year at NBKRIST.
             </p>
 
             <p>
-                I enjoy learning new programming languages and
-                developing websites and applications.
+                I am interested in programming and web development.
+                I enjoy learning new technologies and improving my
+                problem-solving abilities.
             </p>
 
             <p>
-                My goal is to improve my technical knowledge and
-                develop useful projects that solve real-world problems.
+                I am currently building my technical foundation and
+                looking forward to creating meaningful projects.
             </p>
 
         </div>
 
-        <button onclick="showPage('home')">← Back to Home</button>
+        <div class="info-box">
 
-    </section>
+            <h2>Quick Information</h2>
 
-
-    <!-- SKILLS -->
-
-    <section id="skills" class="page">
-
-        <h2>My Skills</h2>
-
-        <div class="skills">
-
-            <div class="skill">
-                <h3>HTML</h3>
-                <p>Creating web page structures.</p>
+            <div class="info-item">
+                <span>Name</span>
+                <span>Rohith</span>
             </div>
 
-            <div class="skill">
-                <h3>CSS</h3>
-                <p>Designing attractive websites.</p>
+            <div class="info-item">
+                <span>Branch</span>
+                <span>CSE</span>
             </div>
 
-            <div class="skill">
-                <h3>JavaScript</h3>
-                <p>Adding functionality and interaction.</p>
+            <div class="info-item">
+                <span>Year</span>
+                <span>3rd Year</span>
             </div>
 
-            <div class="skill">
-                <h3>React</h3>
-                <p>Building modern user interfaces.</p>
+            <div class="info-item">
+                <span>College</span>
+                <span>NBKRIST</span>
             </div>
 
-            <div class="skill">
-                <h3>Java</h3>
-                <p>Object-oriented programming.</p>
-            </div>
-
-            <div class="skill">
-                <h3>Python</h3>
-                <p>Programming and problem solving.</p>
+            <div class="info-item">
+                <span>Interest</span>
+                <span>Technology</span>
             </div>
 
         </div>
 
-        <button onclick="showPage('home')">← Back to Home</button>
+    </div>
 
-    </section>
+    <button onclick="goTo('home')">← Back to Home</button>
+
+</section>
 
 
-    <!-- PROJECTS -->
+<section id="skills">
 
-    <section id="projects" class="page">
+    <div class="page-title">
 
-        <h2>My Projects</h2>
+        <h1>My Skills</h1>
 
-        <div class="projects">
+        <div class="line"></div>
 
-            <div class="project">
+        <p>Technologies I am learning and working with</p>
 
-                <h3>Student Report System</h3>
+    </div>
 
-                <p>
-                    A web-based system for displaying student
-                    information and marks.
-                </p>
+    <div class="skills-container">
 
-            </div>
-
-            <div class="project">
-
-                <h3>Digital Literacy</h3>
-
-                <p>
-                    A project focused on improving digital
-                    awareness in rural areas.
-                </p>
-
-            </div>
-
-            <div class="project">
-
-                <h3>Personal Portfolio</h3>
-
-                <p>
-                    A personal portfolio website developed using
-                    HTML, CSS and JavaScript.
-                </p>
-
-            </div>
-
+        <div class="skill">
+            <div class="skill-icon">J</div>
+            <h3>Java</h3>
+            <p>Object-oriented programming</p>
         </div>
 
-        <button onclick="showPage('home')">← Back to Home</button>
+        <div class="skill">
+            <div class="skill-icon">Py</div>
+            <h3>Python</h3>
+            <p>Programming and problem solving</p>
+        </div>
 
-    </section>
+        <div class="skill">
+            <div class="skill-icon">5</div>
+            <h3>HTML</h3>
+            <p>Web page structure</p>
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">#</div>
+            <h3>CSS</h3>
+            <p>Website styling and design</p>
+        </div>
+
+    </div>
+
+    <div class="learning">
+
+        <h2>Currently Learning</h2>
+
+        <p>
+            I am continuously improving my programming knowledge,
+            exploring web development and working towards becoming
+            a better software developer.
+        </p>
+
+    </div>
+
+    <button onclick="goTo('home')">← Back to Home</button>
+
+</section>
 
 
-    <!-- EDUCATION -->
+<section id="projects">
 
-    <section id="education" class="page">
+    <div class="page-title">
 
-        <h2>My Education</h2>
+        <h1>My Projects</h1>
 
-        <div class="education">
+        <div class="line"></div>
 
-            <h3>Bachelor of Technology</h3>
+        <p>My development journey</p>
 
-            <p>Computer Science and Engineering</p>
+    </div>
+
+    <div class="projects-empty">
+
+        <div class="big-icon">◆</div>
+
+        <h2>Projects Coming Soon</h2>
+
+        <p>
+            I haven't completed any major projects yet.
+            I am currently focusing on strengthening my
+            programming and web development skills.
+        </p>
+
+        <p>
+            This section will be updated as I build and
+            complete new projects.
+        </p>
+
+    </div>
+
+    <button onclick="goTo('home')">← Back to Home</button>
+
+</section>
+
+
+<section id="education">
+
+    <div class="page-title">
+
+        <h1>Education</h1>
+
+        <div class="line"></div>
+
+        <p>My academic journey</p>
+
+    </div>
+
+    <div class="education-container">
+
+        <div class="education-card">
+
+            <div class="education-icon">🎓</div>
+
+            <h2>Bachelor of Technology</h2>
+
+            <h3>Computer Science and Engineering</h3>
 
             <p>NBKR Institute of Science and Technology</p>
 
-            <p>Currently Pursuing B.Tech</p>
+            <p>Currently pursuing 3rd Year</p>
 
         </div>
 
-        <div class="education">
+        <div class="education-card certificate">
 
-            <h3>Areas of Study</h3>
+            <div class="education-icon">📜</div>
 
-            <p>Data Structures and Algorithms</p>
+            <h2>NPTEL Certificate</h2>
 
-            <p>Database Management Systems</p>
-
-            <p>Operating Systems</p>
-
-            <p>Computer Networks</p>
-
-            <p>Web Development</p>
+            <p>
+                Successfully completed an NPTEL course
+                as part of my technical learning journey.
+            </p>
 
         </div>
 
-        <button onclick="showPage('home')">← Back to Home</button>
+    </div>
 
-    </section>
+    <button onclick="goTo('home')">← Back to Home</button>
+
+</section>
 
 
-    <!-- CONTACT -->
+<section id="contact">
 
-    <section id="contact" class="page">
+    <div class="page-title">
 
-        <h2>Contact Me</h2>
+        <h1>Contact Me</h1>
 
-        <div class="contact">
+        <div class="line"></div>
 
-            <p><strong>Name:</strong> Rohith</p>
+        <p>Let's connect</p>
 
-            <p><strong>Email:</strong> rohith@example.com</p>
+    </div>
 
-            <p><strong>Location:</strong> Andhra Pradesh, India</p>
+    <div class="contact-container">
 
-            <p><strong>Interest:</strong> Web Development</p>
+        <div class="contact-box">
+
+            <div class="contact-item">
+
+                <div class="contact-icon">♟</div>
+
+                <div>
+                    <h4>Name</h4>
+                    <p>Rohith</p>
+                </div>
+
+            </div>
+
+            <div class="contact-item">
+
+                <div class="contact-icon">🎓</div>
+
+                <div>
+                    <h4>College</h4>
+                    <p>NBKRIST</p>
+                </div>
+
+            </div>
+
+            <div class="contact-item">
+
+                <div class="contact-icon">💻</div>
+
+                <div>
+                    <h4>Branch</h4>
+                    <p>Computer Science Engineering</p>
+                </div>
+
+            </div>
+
+            <div class="contact-item">
+
+                <div class="contact-icon">📍</div>
+
+                <div>
+                    <h4>Status</h4>
+                    <p>3rd Year Student</p>
+                </div>
+
+            </div>
 
         </div>
 
-        <form id="contactForm">
+
+        <form class="contact-form" id="contactForm">
 
             <input
                 type="text"
@@ -268,13 +364,11 @@
 
             <input
                 type="email"
-                id="email"
                 placeholder="Your Email"
                 required
             >
 
             <textarea
-                id="message"
                 placeholder="Your Message"
                 required
             ></textarea>
@@ -283,25 +377,21 @@
 
         </form>
 
-        <p id="formMessage"></p>
+    </div>
 
-        <button onclick="showPage('home')">
-            ← Back to Home
-        </button>
+    <p id="message"></p>
 
-    </section>
+    <button onclick="goTo('home')">← Back to Home</button>
 
-
-    <footer>
-
-        <p>© 2026 Rohith | My Personal Portfolio</p>
-
-    </footer>
+</section>
 
 
-    <script src="script.js"></script>
+<footer>
+    © 2026 Rohith | My Personal Portfolio
+</footer>
+
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
-```
